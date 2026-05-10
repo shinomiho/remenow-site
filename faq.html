@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よくある質問 | リミー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #2D2D6B;
+    --navy-dark: #1a1a45;
+    --navy-light: #3d3d8a;
+    --purple: #7B4F9E;
+    --purple-light: #9B6FBE;
+    --purple-pale: #f0e8f8;
+    --accent: #5A3F85;
+    --white: #ffffff;
+    --off-white: #f8f7fc;
+    --text-muted: #6b6b8a;
+    --border: #e0ddf0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark { width: 32px; height: 32px; }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  nav ul a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    opacity: 1 !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--navy-light) !important; opacity: 1 !important; }
+
+  .page-hero {
+    padding: 120px 48px 64px;
+    background: linear-gradient(135deg, #f0e8f8 0%, #e8e4f5 50%, #f5f0fc 100%);
+    text-align: center;
+  }
+
+  .page-hero-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section { padding: 80px 48px; }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 48px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--purple);
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid var(--purple);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--purple); color: var(--white); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--navy); }
+
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 48px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+
+  footer a:hover { color: var(--white); }
+
+  .footer-links { margin-bottom: 12px; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    nav ul { display: none; }
+    .page-hero { padding: 100px 24px 48px; }
+    .section { padding: 56px 24px; }
+    footer { padding: 32px 24px; }
+  }
+
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item:hover { box-shadow: 0 4px 16px rgba(45,45,107,0.08); }
+
+  .faq-question {
+    width: 100%;
+    background: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 28px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: left;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: var(--off-white); }
+  .faq-item.open .faq-question { background: var(--navy); color: var(--white); }
+
+  .faq-q-label {
+    color: var(--purple);
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .faq-item.open .faq-q-label { color: var(--purple-light); }
+
+  .faq-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .faq-icon::before, .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .faq-icon::before { width: 2px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+  .faq-icon::after { width: 100%; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
+
+  .faq-item.open .faq-icon::before, .faq-item.open .faq-icon::after { background: var(--white); }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    padding: 0 28px;
+    background: var(--off-white);
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 400px;
+    padding: 20px 28px 24px;
+  }
+
+  .faq-answer p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.9;
+  }
+
+  .faq-answer p strong { color: var(--navy); }
+
+  .faq-category {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 48px 0 16px;
+    padding-left: 12px;
+    border-left: 3px solid var(--purple);
+  }
+
+  .faq-category:first-child { margin-top: 0; }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none">
+      <rect x="2" y="18" width="5" height="12" rx="1" fill="#7B4F9E"/>
+      <rect x="9" y="12" width="5" height="18" rx="1" fill="#5A3F85"/>
+      <rect x="16" y="6" width="5" height="24" rx="1" fill="#3d3d8a"/>
+      <rect x="23" y="2" width="5" height="28" rx="1" fill="#2D2D6B"/>
+      <path d="M4 20 L28 4" stroke="#9B6FBE" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="28,4 22,4 28,10" fill="#9B6FBE"/>
+    </svg>
+    リミー
+  </a>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="service.html">サービス内容</a></li>
+    <li><a href="faq.html" style="opacity:1; font-weight:700;">よくある質問</a></li>
+    <li><a href="representative.html">代表あいさつ</a></li>
+    <li><a href="company.html">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+
+<div class="page-hero">
+  <div class="page-hero-tag">FAQ</div>
+  <h1>よくある質問</h1>
+  <p>リミーについてよくいただくご質問をまとめました。<br>その他のご質問はお問い合わせフォームからどうぞ。</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="faq-list">
+<div class="faq-category">サービスについて</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">何をするサービスですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>入社初期の社員の状態変化をもとに、離職につながりやすい兆しを早い段階で把握するための仕組みです。辞めた後の理由分析ではなく、辞める前に気づくことを目的としています。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">リミーはどんな企業向けのサービスですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>リミーは、新卒・中途を問わず、入社後90日以内の離職に課題を感じている企業向けのサービスです。特に、美容院・飲食・介護など、人手不足で「これ以上、現場や管理職に負担をかけられない」業界の声をもとに設計されています。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">採用サービスや人材紹介とは何が違うのですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>リミーは採用後を支援するサービスです。人材紹介や採用マッチングのように「採ること」を目的としていません。入社後90日間をどう支えるかに特化しています。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">なぜこのサービスを作ったのですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>「人は悪くない。でも、仕組みが追いついていない」。これは、開発者自身の実体験から生まれた言葉です。即戦力として期待され、十分なフォローがないまま現場に出される「即戦力＝放置」の状態を経験してきました。本来活躍できたはずの人材が、静かに疲弊し、離脱していく。だからこそ、大切な人材が離脱しないための仕組みが必要だと考え、リミーを作りました。</p></div>
+</div>
+<div class="faq-category">導入・運用</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">4月入社の新入社員にも使えますか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>はい。むしろ4月〜6月の90日間が最も重要なタイミングです。この期間のデータから、離職リスクの傾向を把握しやすくなります。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">オーナーや店長、経営陣の負担はどれくらいですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>ほぼありません。新しい面談、評価制度、定例ミーティングの追加は不要です。オーナー・店長・経営陣が行うのは、ダッシュボード、もしくはPDFの結果レポートを3分確認するだけです。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">人事や現場の業務フローは変わりますか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>変わりません。接客・調理・ケアなど、日常業務はこれまで通りです。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">なぜ初月無料・検証価格なのですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>現場で使われてこそ、価値が分かるサービスだからです。導入前に「本当に役立つか」を確認していただきたいと考えています。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">検証プランでは何ができますか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>実際の現場でリミーを利用し、自社の傾向や示唆を確認していただけます。検証期間中に得られたデータは、すべて自社の資産として活用可能です。</p></div>
+</div>
+<div class="faq-category">アンケート・データ</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">新入社員がアンケートで本音を出さないのでは？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>その前提で設計しています。設問は直接的な不満表明ではなく、業務の進みやすさ・周囲との関わりやすさ・最近の仕事への向き合い方など、変化や傾向として兆しを捉えられる仕組みです。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">正直に答えさせるための工夫はしていますか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>無理に正直さを求めていません。一つひとつの回答ではなく、時間の経過による変化を見ることで、状態を把握します。</p></div>
+</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">セキュリティや個人情報は大丈夫ですか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>個人が特定される形での評価や公開は行いません。詳細なセキュリティ要件については、個別にご説明します。</p></div>
+</div>
+<div class="faq-category">効果・結果</div>
+<div class="faq-item reveal">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span class="faq-q-label">Q</span>
+    <span style="flex:1">離職を必ず防げますか？</span>
+    <div class="faq-icon"></div>
+  </button>
+  <div class="faq-answer"><p>いいえ。リミーは、離職をゼロにする魔法のツールではありません。ただし、「なぜ辞めたのか分からない」「もっと早く気づけたかもしれない」という状態を減らすことはできます。</p></div>
+</div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:64px; padding:40px; background:var(--off-white); border-radius:12px;">
+      <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:8px;">解決しない疑問がありましたら</p>
+      <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px; line-height:1.8">お気軽にお問い合わせください。担当者より丁寧にご回答いたします。</p>
+      <a href="contact.html" class="btn-primary">お問い合わせはこちら →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
+    <a href="tokushoho.html">特商法</a>
+  </div>
+  <p>リミーは入社後90日に特化した採用後支援HRテックです</p>
+  <p style="margin-top:8px">© 2026 リミー All rights reserved.</p>
+</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

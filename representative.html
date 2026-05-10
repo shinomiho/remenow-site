@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>代表あいさつ | リミー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #2D2D6B;
+    --navy-dark: #1a1a45;
+    --navy-light: #3d3d8a;
+    --purple: #7B4F9E;
+    --purple-light: #9B6FBE;
+    --purple-pale: #f0e8f8;
+    --accent: #5A3F85;
+    --white: #ffffff;
+    --off-white: #f8f7fc;
+    --text-muted: #6b6b8a;
+    --border: #e0ddf0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark { width: 32px; height: 32px; }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  nav ul a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    opacity: 1 !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--navy-light) !important; opacity: 1 !important; }
+
+  .page-hero {
+    padding: 120px 48px 64px;
+    background: linear-gradient(135deg, #f0e8f8 0%, #e8e4f5 50%, #f5f0fc 100%);
+    text-align: center;
+  }
+
+  .page-hero-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section { padding: 80px 48px; }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 48px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--purple);
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid var(--purple);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--purple); color: var(--white); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--navy); }
+
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 48px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+
+  footer a:hover { color: var(--white); }
+
+  .footer-links { margin-bottom: 12px; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    nav ul { display: none; }
+    .page-hero { padding: 100px 24px 48px; }
+    .section { padding: 56px 24px; }
+    footer { padding: 32px 24px; }
+  }
+
+
+  .rep-section {
+    padding: 80px 48px;
+    background: var(--white);
+  }
+
+  .rep-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .rep-profile {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
+    align-items: flex-start;
+    margin-bottom: 64px;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+    flex-shrink: 0;
+    box-shadow: 0 8px 32px rgba(45,45,107,0.15);
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .rep-text p {
+    font-size: 15px;
+    line-height: 2.1;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .rep-text p strong { color: var(--navy); }
+
+  .rep-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .mvv-section {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 56px;
+    color: var(--white);
+  }
+
+  .mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .mvv-item {
+    border-top: 3px solid var(--purple-light);
+    padding-top: 20px;
+  }
+
+  .mvv-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple-light);
+    margin-bottom: 8px;
+  }
+
+  .mvv-subtitle {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+
+  .mvv-item p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.9;
+  }
+
+  .values-list {
+    list-style: none;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .values-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+  }
+
+  .values-list li::before {
+    content: '✓';
+    color: var(--purple-light);
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .rep-section { padding: 56px 24px; }
+    .rep-profile { grid-template-columns: 1fr; gap: 32px; }
+    .profile-photo { width: 140px; height: 170px; margin: 0 auto; }
+    .mvv-section { padding: 32px 24px; }
+    .mvv-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none">
+      <rect x="2" y="18" width="5" height="12" rx="1" fill="#7B4F9E"/>
+      <rect x="9" y="12" width="5" height="18" rx="1" fill="#5A3F85"/>
+      <rect x="16" y="6" width="5" height="24" rx="1" fill="#3d3d8a"/>
+      <rect x="23" y="2" width="5" height="28" rx="1" fill="#2D2D6B"/>
+      <path d="M4 20 L28 4" stroke="#9B6FBE" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="28,4 22,4 28,10" fill="#9B6FBE"/>
+    </svg>
+    リミー
+  </a>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="service.html">サービス内容</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="representative.html" style="opacity:1; font-weight:700;">代表あいさつ</a></li>
+    <li><a href="company.html">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+
+<div class="page-hero">
+  <div class="page-hero-tag">REPRESENTATIVE</div>
+  <h1>代表あいさつ</h1>
+</div>
+
+<section class="rep-section">
+  <div class="rep-inner">
+
+    <div class="rep-profile reveal">
+      <div class="profile-photo">
+        <img src="50_Miho_Shinohe.png" alt="四戸美穂">
+      </div>
+      <div class="rep-text">
+        <p>私はこれまで25年以上、大手外資系企業で働いてきました。いわゆる「即戦力」として成果を求められる環境で、事業・組織・プロジェクトに携わってきました。</p>
+        <p>しかし51歳のとき、正社員としてのキャリアを終え、再び採用市場に立ったことで、別の現実を知ることになります。</p>
+        <p>経験が広すぎること、即戦力として100％一致しないこと、離職期間があること。こうした理由から、能力や実績とは関係なく、多くの選考で前に進むことができませんでした。</p>
+        <p>また、やっと入社できた現場でも、入社後のフォローや設計がないことで、<strong>本来発揮できるはずの力が活かされない場面</strong>を経験しました。</p>
+        <p>この経験から、採用の課題は「採るかどうか」ではなく、<strong>「採用後にどう支えるか」</strong>にあると強く感じるようになりました。</p>
+        <p>リミーは、採用後90日を構造化することで、人の違いを理由に活躍の機会が閉じられてしまうことを防ぎ、企業と人が共に前に進める環境をつくるためのサービスです。</p>
+        <p>私たちは、人の違いを否定しません。しかし、その違いが、活躍の機会を奪ってしまうことは否定します。</p>
+        <div class="rep-name">リミー代表　四戸美穂</div>
+      </div>
+    </div>
+
+    <div class="mvv-section reveal">
+      <div class="section-tag" style="color: var(--purple-light);">MISSION / VISION / VALUE</div>
+      <h2 style="font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: var(--white); line-height: 1.3;">私たちが大切にしていること</h2>
+      <div class="mvv-grid">
+        <div class="mvv-item">
+          <div class="mvv-label">MISSION</div>
+          <div class="mvv-subtitle">使命</div>
+          <p>人の違いが、活躍の機会を奪われてしまうことをなくす。</p>
+        </div>
+        <div class="mvv-item">
+          <div class="mvv-label">VISION</div>
+          <div class="mvv-subtitle">目指す社会</div>
+          <p>経験や年齢、ジェンダーに関係なく、採用後も共に活躍し続けられることが当たり前の社会。</p>
+        </div>
+        <div class="mvv-item">
+          <div class="mvv-label">VALUE</div>
+          <div class="mvv-subtitle">大切にする価値観</div>
+          <ul class="values-list">
+            <li>採用はゴールではなく、スタートである</li>
+            <li>ミスマッチを個人の問題にしない</li>
+            <li>感覚ではなく"仕組み"で新入社員と企業を支える</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
+    <a href="tokushoho.html">特商法</a>
+  </div>
+  <p>リミーは入社後90日に特化した採用後支援HRテックです</p>
+  <p style="margin-top:8px">© 2026 リミー All rights reserved.</p>
+</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

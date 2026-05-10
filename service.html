@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス内容 | リミー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #2D2D6B;
+    --navy-dark: #1a1a45;
+    --navy-light: #3d3d8a;
+    --purple: #7B4F9E;
+    --purple-light: #9B6FBE;
+    --purple-pale: #f0e8f8;
+    --accent: #5A3F85;
+    --white: #ffffff;
+    --off-white: #f8f7fc;
+    --text-muted: #6b6b8a;
+    --border: #e0ddf0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 64px;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark { width: 32px; height: 32px; }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  nav ul a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--navy);
+    color: var(--white) !important;
+    opacity: 1 !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--navy-light) !important; opacity: 1 !important; }
+
+  .page-hero {
+    padding: 120px 48px 64px;
+    background: linear-gradient(135deg, #f0e8f8 0%, #e8e4f5 50%, #f5f0fc 100%);
+    text-align: center;
+  }
+
+  .page-hero-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section { padding: 80px 48px; }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 48px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--purple);
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border: 2px solid var(--purple);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--purple); color: var(--white); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--navy); }
+
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.5);
+    padding: 40px 48px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+
+  footer a:hover { color: var(--white); }
+
+  .footer-links { margin-bottom: 12px; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    nav ul { display: none; }
+    .page-hero { padding: 100px 24px 48px; }
+    .section { padding: 56px 24px; }
+    footer { padding: 32px 24px; }
+  }
+
+
+  .service-hero-quote {
+    font-size: clamp(24px, 3.5vw, 40px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .pain-card {
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 28px;
+    border-left: 4px solid var(--purple);
+  }
+
+  .pain-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .pain-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .step-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .step-num-big {
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    font-family: 'Noto Serif JP', serif;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .step-block h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+
+  .step-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: 1px;
+    background: var(--purple-pale);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+
+  .step-block p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.9;
+  }
+
+  .effects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .effect-card {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 32px 24px;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .effect-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .effect-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .effect-card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+  }
+
+  .cta-bar {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    margin-top: 64px;
+  }
+
+  .cta-bar h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .cta-bar p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--navy);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  .btn-white:hover { background: var(--off-white); transform: translateY(-1px); }
+
+  .btn-purple {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--purple);
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  .btn-purple:hover { background: var(--purple-light); transform: translateY(-1px); }
+
+  @media (max-width: 768px) {
+    .pain-grid { grid-template-columns: 1fr; }
+    .effects-grid { grid-template-columns: 1fr; }
+    .step-block { grid-template-columns: 1fr; gap: 8px; }
+    .step-num-big { font-size: 48px; }
+    .cta-bar { padding: 32px 24px; }
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none">
+      <rect x="2" y="18" width="5" height="12" rx="1" fill="#7B4F9E"/>
+      <rect x="9" y="12" width="5" height="18" rx="1" fill="#5A3F85"/>
+      <rect x="16" y="6" width="5" height="24" rx="1" fill="#3d3d8a"/>
+      <rect x="23" y="2" width="5" height="28" rx="1" fill="#2D2D6B"/>
+      <path d="M4 20 L28 4" stroke="#9B6FBE" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="28,4 22,4 28,10" fill="#9B6FBE"/>
+    </svg>
+    リミー
+  </a>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="service.html" style="opacity:1; font-weight:700;">サービス内容</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="representative.html">代表あいさつ</a></li>
+    <li><a href="company.html">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-tag">SERVICE</div>
+  <h1 class="service-hero-quote">「辞めます」と言われてからでは、<br>もう遅い。</h1>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">PROBLEM</div>
+    <h2 class="section-title">このような組織の痛みを<br>放置していませんか？</h2>
+    <div class="pain-grid">
+      <div class="pain-card reveal reveal-delay-1">
+        <h3>穴の空いたバケツ</h3>
+        <p>採用しても、それ以上のスピードで人が辞めていく。採用コストが利益を食い続ける負のサイクル。</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-2">
+        <h3>現場のブラックボックス化</h3>
+        <p>店長に任せきりでスタッフの本音が社長まで届かない。問題が表面化してから気づく繰り返し。</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-3">
+        <h3>「突然」の退職届</h3>
+        <p>昨日まで普通に働いていたスタッフから、突然辞表を出される。サインを見逃していただけ。</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-4">
+        <h3>教育コストの浪費</h3>
+        <p>育った頃に辞められ、ゼロから教え直す日々を繰り返している。ノウハウが組織に蓄積されない。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background: var(--off-white);">
+  <div class="section-inner">
+    <div class="section-tag">HOW IT WORKS</div>
+    <h2 class="section-title">リミーの3つの武器</h2>
+
+    <div class="step-block reveal">
+      <div class="step-num-big">01</div>
+      <div>
+        <div class="step-label">STEP1 ── 予見</div>
+        <h3>3分で完了する「AI心理診断」</h3>
+        <p>現場に負担はかけません。スタッフは月に一度、スマホで数問の質問に答えるだけ。AIが「心のガソリン残量」を分析し、離職リスクがあるスタッフを自動でリストアップします。</p>
+      </div>
+    </div>
+
+    <div class="step-block reveal">
+      <div class="step-num-big">02</div>
+      <div>
+        <div class="step-label">STEP2 ── 可視化</div>
+        <h3>6つの因子で「辞める理由」を特定</h3>
+        <p>「人間関係」「仕事の適性」「評価への納得感」などスタッフの不満の種を6軸でグラフ化。「なぜ、あの人はやる気を失っているのか」が、データとして客観的にわかります。</p>
+      </div>
+    </div>
+
+    <div class="step-block reveal">
+      <div class="step-num-big">03</div>
+      <div>
+        <div class="step-label">STEP3 ── 実行</div>
+        <h3>管理者へ「具体的なセリフ」を指示</h3>
+        <p>リミーは、店長や管理者に「今、その部下に掛けるべき具体的な一言」をアドバイス。経験の浅い管理者でも、データに基づいた的確なフォローが可能になり、組織全体のマネジメント能力を底上げします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EFFECTS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag">RESULTS</div>
+    <h2 class="section-title">リミーがもたらす、<br>経営の自由。</h2>
+    <div class="effects-grid">
+      <div class="effect-card reveal reveal-delay-1">
+        <div class="effect-icon">💰</div>
+        <h3>採用・教育コストの<br>劇的削減</h3>
+        <p>早期離職を防ぐことで、年間数百万円の損失を利益に変えます。</p>
+      </div>
+      <div class="effect-card reveal reveal-delay-2">
+        <div class="effect-icon">🚀</div>
+        <h3>自走する現場の<br>構築</h3>
+        <p>社長が現場のトラブル対応に追われず、本来の「経営戦略」に集中できる時間を創出します。</p>
+      </div>
+      <div class="effect-card reveal reveal-delay-3">
+        <div class="effect-icon">⭐</div>
+        <h3>「選ばれる職場」へ</h3>
+        <p>データの裏付けがあるフォロー体制は、スタッフの安心感と定着率を高め、採用ブランディングにも貢献します。</p>
+      </div>
+    </div>
+
+    <div class="cta-bar reveal">
+      <h2>まず、資料から見てみませんか？</h2>
+      <p>導入費用・事例・詳細機能をまとめた資料を無料でご覧いただけます。</p>
+      <div class="cta-buttons">
+        <a href="https://gamma.app/docs/202601--yn4ojhkesqv70nm?mode=doc" class="btn-white" target="_blank">資料を見る →</a>
+        <a href="https://suave-column-ee1.notion.site/2f9bba912c7e80eeaa69ce5aa7567cd6?pvs=105" class="btn-purple" target="_blank">無料で試す →</a>
+        <a href="contact.html" class="btn-white">お問い合わせ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
+    <a href="tokushoho.html">特商法</a>
+  </div>
+  <p>リミーは入社後90日に特化した採用後支援HRテックです</p>
+  <p style="margin-top:8px">© 2026 リミー All rights reserved.</p>
+</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
