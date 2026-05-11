@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特定商取引法に基づく表記 | リミー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #2D2D6B;
+    --navy-dark: #1a1a45;
+    --navy-light: #3d3d8a;
+    --purple: #7B4F9E;
+    --purple-light: #9B6FBE;
+    --purple-pale: #f0e8f8;
+    --white: #ffffff;
+    --off-white: #f8f7fc;
+    --text-muted: #6b6b8a;
+    --border: #e0ddf0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 64px;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-logo-mark { width: 32px; height: 32px; }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { text-decoration: none; font-size: 14px; color: var(--navy); font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  nav ul a:hover { opacity: 1; }
+  .nav-cta { background: var(--navy); color: var(--white) !important; opacity: 1 !important; padding: 8px 20px; border-radius: 4px; font-size: 13px !important; font-weight: 700 !important; }
+  .nav-cta:hover { background: var(--navy-light) !important; }
+  .page-hero { padding: 120px 48px 64px; background: linear-gradient(135deg, #f0e8f8 0%, #e8e4f5 50%, #f5f0fc 100%); text-align: center; }
+  .page-hero-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--purple); text-transform: uppercase; margin-bottom: 16px; }
+  .page-hero h1 { font-size: clamp(24px, 3.5vw, 40px); font-weight: 900; color: var(--navy); line-height: 1.3; }
+  .section { padding: 80px 48px; }
+  .section-inner { max-width: 800px; margin: 0 auto; }
+  footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 40px 48px; text-align: center; font-size: 13px; line-height: 1.8; }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 12px; }
+  footer a:hover { color: var(--white); }
+  .footer-links { margin-bottom: 12px; }
+  @media (max-width: 768px) { nav { padding: 0 20px; } nav ul { display: none; } .page-hero { padding: 100px 24px 48px; } .section { padding: 56px 24px; } footer { padding: 32px 24px; } }
+
+
+  .legal-body { line-height: 2; color: var(--text-muted); font-size: 15px; }
+  .legal-body h2 { font-size: 18px; font-weight: 700; color: var(--navy); margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .legal-body h2:first-child { margin-top: 0; }
+  .legal-body p { margin-bottom: 16px; }
+  .legal-body ul { padding-left: 24px; margin-bottom: 16px; }
+  .legal-body ul li { margin-bottom: 8px; }
+  .legal-body .updated { font-size: 13px; color: var(--text-muted); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .legal-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px; }
+  .legal-table th, .legal-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; line-height: 1.8; }
+  .legal-table th { width: 180px; font-weight: 700; color: var(--navy); background: var(--off-white); white-space: nowrap; }
+  .legal-table td { color: var(--text-muted); }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 32 32" fill="none">
+      <rect x="2" y="18" width="5" height="12" rx="1" fill="#7B4F9E"/>
+      <rect x="9" y="12" width="5" height="18" rx="1" fill="#5A3F85"/>
+      <rect x="16" y="6" width="5" height="24" rx="1" fill="#3d3d8a"/>
+      <rect x="23" y="2" width="5" height="28" rx="1" fill="#2D2D6B"/>
+      <path d="M4 20 L28 4" stroke="#9B6FBE" stroke-width="2" stroke-linecap="round"/>
+      <polygon points="28,4 22,4 28,10" fill="#9B6FBE"/>
+    </svg>
+    リミー
+  </a>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="service.html">サービス内容</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="representative.html">代表あいさつ</a></li>
+    <li><a href="company.html">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-tag">LEGAL</div>
+  <h1>特定商取引法に基づく表記</h1>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="legal-body">
+
+      <p class="updated">特定商取引法に基づく表記（最終更新日：2026年5月1日）</p>
+
+      <h2>事業者情報</h2>
+      <table class="legal-table">
+        <tr><th>販売事業者</th><td>リミー</td></tr>
+        <tr><th>代表者名</th><td>四戸 美穂（Miho Shinohe）</td></tr>
+        <tr><th>事業形態</th><td>個人事業主</td></tr>
+        <tr><th>所在地</th><td>東京都<br><span style="font-size:13px;color:#9999aa">※個人事業のため、詳細住所はお取引先様にのみ開示いたします。ご要望の場合はお問い合わせください。</span></td></tr>
+        <tr><th>連絡先</th><td><a href="contact.html" style="color:var(--purple);">お問い合わせフォーム</a>よりご連絡ください<br>（通常2〜3営業日以内にご返答いたします）</td></tr>
+      </table>
+
+      <h2>サービス・料金について</h2>
+      <table class="legal-table">
+        <tr><th>サービス内容</th><td>入社後90日間の定着支援プログラム（AI診断・レポート配信・管理者向けアドバイス）</td></tr>
+        <tr><th>販売価格</th><td>個別のご要望・企業規模に応じてお見積もりいたします。<br>初回は検証プランとして無料でご利用いただけます。<br>詳細はお問い合わせください。</td></tr>
+        <tr><th>支払方法</th><td>銀行振込（詳細はご契約時にご案内いたします）</td></tr>
+        <tr><th>支払時期</th><td>ご契約内容に基づき、別途ご案内いたします</td></tr>
+        <tr><th>サービス提供時期</th><td>ご契約・お支払い確認後、別途ご案内するスケジュールに従いサービスを提供いたします</td></tr>
+      </table>
+
+      <h2>キャンセル・返金について</h2>
+      <table class="legal-table">
+        <tr><th>キャンセル</th><td>サービス開始前のキャンセルについては、個別にご相談ください。サービス開始後のキャンセルについては、ご契約内容に基づき対応いたします。</td></tr>
+        <tr><th>返金</th><td>検証プランは無料のため返金は発生しません。有償プランの返金については、ご契約時にご案内する利用規約に従います。</td></tr>
+      </table>
+
+      <h2>動作環境</h2>
+      <table class="legal-table">
+        <tr><th>推奨環境</th><td>インターネット接続環境・最新のWebブラウザ（Chrome・Safari・Firefox・Edge）<br>スマートフォンでもご利用いただけます</td></tr>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
+    <a href="tokushoho.html">特商法</a>
+  </div>
+  <p>リミーは入社後90日に特化した採用後支援HRテックです</p>
+  <p style="margin-top:8px">© 2026 リミー All rights reserved.</p>
+</footer>
+</body>
+</html>
