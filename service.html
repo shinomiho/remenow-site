@@ -406,12 +406,103 @@
 
   .btn-purple:hover { background: var(--purple-light); transform: translateY(-1px); }
 
+  /* KPI TABLE */
+  .kpi-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .kpi-header {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr;
+    background: var(--navy);
+    padding: 16px 28px;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .kpi-col-need, .kpi-col-support {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .kpi-header .kpi-col-need, .kpi-header .kpi-col-support {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .kpi-col-arrow {
+    font-size: 20px;
+    color: var(--purple-light);
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 16px;
+    padding: 28px;
+    border-top: 1px solid var(--border);
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .kpi-row:hover { background: var(--off-white); }
+
+  .kpi-row .kpi-col-arrow {
+    color: var(--purple);
+    padding-top: 28px;
+  }
+
+  .kpi-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--purple);
+    background: var(--purple-pale);
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .kpi-col-need strong, .kpi-col-support strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .kpi-col-need p, .kpi-col-support p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .kpi-col-support {
+    background: rgba(123,79,158,0.04);
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 3px solid var(--purple-light);
+  }
+
   @media (max-width: 768px) {
     .pain-grid { grid-template-columns: 1fr; }
     .effects-grid { grid-template-columns: 1fr; }
     .step-block { grid-template-columns: 1fr; gap: 8px; }
     .step-num-big { font-size: 48px; }
     .cta-bar { padding: 32px 24px; }
+    .kpi-header { grid-template-columns: 1fr; }
+    .kpi-header .kpi-col-arrow { display: none; }
+    .kpi-row { grid-template-columns: 1fr; gap: 12px; }
+    .kpi-row .kpi-col-arrow { display: none; }
   }
 
 </style>
@@ -508,8 +599,78 @@
   </div>
 </section>
 
-<!-- EFFECTS -->
+<!-- ESG KPI SUPPORT -->
 <section class="section">
+  <div class="section-inner">
+    <div class="section-tag">ESG / 人的資本経営</div>
+    <h2 class="section-title">有価証券報告書への開示に必要なKPIを、<br>リミーが一緒に設計します。</h2>
+    <p style="font-size:15px; color:var(--text-muted); line-height:1.9; margin-bottom:48px;">2023年3月期より、上場企業には人的資本に関する情報開示が義務化されました。しかし「何をKPIにすべきか」「どうデータを取るか」で多くの企業が手をこまねいています。リミーは、開示に必要な指標を設計する段階からサポートします。</p>
+
+    <div class="kpi-table">
+      <div class="kpi-header">
+        <div class="kpi-col-need">有報の人的資本開示で<br>求められること</div>
+        <div class="kpi-col-arrow"></div>
+        <div class="kpi-col-support">リミーが提供するサポート</div>
+      </div>
+      <div class="kpi-row reveal">
+        <div class="kpi-col-need">
+          <div class="kpi-tag">KPI①</div>
+          <strong>従業員エンゲージメントの測定・開示</strong>
+          <p>「従業員が組織に対してどれだけ前向きに関わっているか」を定量的に示す必要があります。</p>
+        </div>
+        <div class="kpi-col-arrow">→</div>
+        <div class="kpi-col-support">
+          <strong>月次エンゲージメントスコアを自動算出</strong>
+          <p>AI診断により、入社後30・60・90日のエンゲージメントスコア推移をグラフ化。有報にそのまま掲載できる形式で出力します。</p>
+        </div>
+      </div>
+      <div class="kpi-row reveal">
+        <div class="kpi-col-need">
+          <div class="kpi-tag">KPI②</div>
+          <strong>人材定着率・早期離職率の把握</strong>
+          <p>採用後の定着状況を数値で示すことで、「人への投資が機能しているか」を証明する必要があります。</p>
+        </div>
+        <div class="kpi-col-arrow">→</div>
+        <div class="kpi-col-support">
+          <strong>オンボーディング定着率レポートを提供</strong>
+          <p>入社後90日の定着率・離職リスク検知率を自動集計。採用コストと照らし合わせた投資対効果の可視化もサポートします。</p>
+        </div>
+      </div>
+      <div class="kpi-row reveal">
+        <div class="kpi-col-need">
+          <div class="kpi-tag">KPI③</div>
+          <strong>人材育成・マネジメント施策の実施状況</strong>
+          <p>「研修実施率」だけでなく、現場での具体的な育成行動が行われているかを示すことが求められています。</p>
+        </div>
+        <div class="kpi-col-arrow">→</div>
+        <div class="kpi-col-support">
+          <strong>マネジメントアクション実施率を記録</strong>
+          <p>管理者がリミーのアドバイスに基づいて行ったフォロー行動を記録・集計。「実施した施策」として有報に記載できるエビデンスを生成します。</p>
+        </div>
+      </div>
+      <div class="kpi-row reveal">
+        <div class="kpi-col-need">
+          <div class="kpi-tag">KPI④</div>
+          <strong>職場環境・心理的安全性の定量化</strong>
+          <p>ESGの「S（社会）」として、従業員が安心して働ける職場環境を数値で示すことが投資家から求められています。</p>
+        </div>
+        <div class="kpi-col-arrow">→</div>
+        <div class="kpi-col-support">
+          <strong>6軸スコアで職場環境を可視化</strong>
+          <p>業務適応・対人関係・心理エナジー・評価納得感・定着意思・成長実感の6指標を定期測定。IRや統合報告書への記載データとして活用できます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--purple-pale); border-radius:12px; padding:28px 32px; margin-top:40px; border-left:4px solid var(--purple);">
+      <p style="font-size:15px; color:var(--navy); font-weight:700; margin-bottom:8px;">KPI設定から開示文書の作成まで、一緒に考えます。</p>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.9;">「どの指標を使うべきか」「どう文章にするか」まで、個別にご相談に乗ります。まずはお気軽にお問い合わせください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- EFFECTS -->
+<section class="section" style="background:var(--off-white);">
   <div class="section-inner">
     <div class="section-tag">RESULTS</div>
     <h2 class="section-title">リミーがもたらす、<br>経営の自由。</h2>
