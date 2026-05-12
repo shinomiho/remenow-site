@@ -346,12 +346,168 @@
     margin-top: 2px;
   }
 
+  /* CAREER */
+  .career-section {
+    margin-bottom: 64px;
+  }
+
+  .career-title {
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+
+  .career-summary {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 40px;
+    padding: 20px 24px;
+    background: var(--off-white);
+    border-radius: 8px;
+    border-left: 3px solid var(--purple-light);
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 110px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .tl-item:last-child { border-bottom: none; }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: 104px;
+    top: 32px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--white);
+  }
+
+  .tl-highlight::before {
+    background: var(--purple) !important;
+  }
+
+  .tl-period {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding-top: 4px;
+    line-height: 1.5;
+  }
+
+  .tl-company {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .tl-body p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .tl-achievement {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .tl-achievement span {
+    font-size: 13px;
+    color: var(--purple);
+    background: var(--purple-pale);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .tl-achievement strong { color: var(--navy); }
+
+  /* SOCIAL */
+  .social-section {
+    margin-bottom: 64px;
+  }
+
+  .social-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .social-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--off-white);
+    border-radius: 12px;
+  }
+
+  .social-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .social-org {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .social-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .social-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.9;
+    padding: 16px 20px;
+    border-left: 3px solid var(--purple);
+    background: var(--purple-pale);
+    border-radius: 0 8px 8px 0;
+  }
+
   @media (max-width: 768px) {
     .rep-section { padding: 56px 24px; }
     .rep-profile { grid-template-columns: 1fr; gap: 32px; }
     .profile-photo { width: 140px; height: 170px; margin: 0 auto; }
     .mvv-section { padding: 32px 24px; }
     .mvv-grid { grid-template-columns: 1fr; gap: 24px; }
+    .timeline::before { left: 80px; }
+    .tl-item { grid-template-columns: 80px 1fr; gap: 16px; }
+    .tl-item::before { left: 74px; }
   }
 
 </style>
@@ -403,6 +559,96 @@
         <p>私たちは、人の違いを否定しません。しかし、その違いが、活躍の機会を奪ってしまうことは否定します。</p>
         <div class="rep-name">リミー代表　四戸美穂</div>
       </div>
+    </div>
+
+    <!-- CAREER -->
+    <div class="career-section reveal">
+      <div class="section-tag">CAREER</div>
+      <h2 class="career-title">キャリア概要</h2>
+      <div class="career-summary">
+        Hewlett-Packard・Crocs・西友（Walmart Japan）・Uber Eatsなど、グローバル外資系企業にて約25年間、事業マネジメント・商品開発・サプライチェーン・プロジェクト推進に従事。P/L管理から海外本社連携まで、バリューチェーン全体を横断した実務経験を持つ。
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-period">2024 — 現在</div>
+          <div class="tl-body">
+            <div class="tl-company">リミー（Remenow）　代表</div>
+            <p>入社後90日に特化した人材定着・オンボーディング支援事業を立ち上げ。AI診断プロダクト企画、企業ヒアリング、ESG経営における人的資本KPI設計支援を行う。</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">2022 — 2023</div>
+          <div class="tl-body">
+            <div class="tl-company">Uber Eats Japan　Procurement Manager</div>
+            <p>1,000SKUのアソート最適化、アルコールライセンス取得プロジェクトPM、海外本社との英語折衝を担当。</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">2021 — 2022</div>
+          <div class="tl-body">
+            <div class="tl-company">Delivery Hero Japan　カテゴリーマネージャー</div>
+            <p>Qコマース事業立ち上げ支援、物流SOP構築、業務標準化を推進。</p>
+          </div>
+        </div>
+        <div class="tl-item tl-highlight">
+          <div class="tl-period">2016 — 2021</div>
+          <div class="tl-body">
+            <div class="tl-company">西友（Walmart Japan）　商品開発リーダー / FP&A</div>
+            <p>年間約30件の部門横断プロジェクトを統括。PB商品500SKU管理、KPI設計・ROI分析、経営層向けレポーティングを担当。</p>
+            <div class="tl-achievement">
+              <span>売上 <strong>+6億円</strong></span>
+              <span>利益 <strong>+3億円改善</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item tl-highlight">
+          <div class="tl-period">2008 — 2016</div>
+          <div class="tl-body">
+            <div class="tl-company">Crocs Japan　商品開発リーダー</div>
+            <p>商品企画・需要予測・在庫計画・S&OP運営・Oracle ERP導入（日本ローカライズ）を担当。英語会議による本社連携。</p>
+            <div class="tl-achievement">
+              <span>在庫日数 <strong>90日 → 30日</strong>（資金効率 約<strong>20億円改善</strong>）</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">2000 — 2008</div>
+          <div class="tl-body">
+            <div class="tl-company">Hewlett-Packard Japan　Procurement Manager</div>
+            <p>SAP関連業務、決済プロセス導入、グローバル標準と日本商習慣の調整、英語資料作成・合意形成を担当。</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">1996 — 2000</div>
+          <div class="tl-body">
+            <div class="tl-company">京セラオプテック / オリンパス光学工業　海外営業・営業</div>
+            <p>輸出業務、受注・納期管理、海外代理店・顧客対応を担当。キャリアの起点として国際ビジネスの実務を習得。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="social-section reveal">
+      <div class="section-tag">SOCIAL ACTIVITIES</div>
+      <h2 class="career-title">社会活動</h2>
+      <div class="social-grid">
+        <div class="social-card">
+          <div class="social-icon">🌏</div>
+          <div>
+            <div class="social-org">350.org Japan　ボランティアクルー</div>
+            <p>気候変動および再生可能エネルギーに関する市民向け講座の講師を担当。科学的根拠に基づく啓発活動を推進。</p>
+          </div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon">🌱</div>
+          <div>
+            <div class="social-org">Climate Reality Project Japan　Leader</div>
+            <p>Al Gore元米国副大統領が設立した国際的な気候変動啓発組織のリーダーとして活動。企業・市民への気候変動教育に携わる。</p>
+          </div>
+        </div>
+      </div>
+      <p class="social-note">リミーが目指す「人的資本経営」と「ESG経営」は、企業が社会と共に持続可能であるためのアプローチとして一体のものと考えています。</p>
     </div>
 
     <div class="mvv-section reveal">
