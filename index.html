@@ -632,18 +632,18 @@
   /* ── STORY PHOTO ── */
   .story-photo {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/4;
     border-radius: 16px;
     overflow: hidden;
     flex-shrink: 0;
+    max-width: 360px;
   }
   .story-photo img {
-    width: 85%;
-    height: auto;
-    object-fit: contain;
-    object-position: bottom;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     display: block;
-    margin: 0 auto;
   }
 
   /* ── RESPONSIVE additions ── */
@@ -855,14 +855,14 @@
   </div>
 </section>
 
-<!-- PHOTO BANNER -->
-<div style="width:100%; height:280px; overflow:hidden; position:relative;">
-  <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1400&q=80&auto=format&fit=crop" alt="オフィスでのミーティング" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;" loading="lazy">
-  <div style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(45,45,107,0.75) 0%, rgba(123,79,158,0.5) 100%); display:flex; align-items:center; justify-content:center;">
-    <div style="text-align:center; color:white; padding:0 24px;">
-      <div style="font-size:13px; font-weight:700; letter-spacing:3px; color:rgba(255,255,255,0.7); margin-bottom:12px;">OUR MISSION</div>
-      <div style="font-size:clamp(20px,3vw,36px); font-weight:900; line-height:1.4;">人の違いが、活躍の機会を<br>奪われてしまうことをなくす。</div>
-    </div>
+<!-- MISSION BANNER -->
+<div style="width:100%; padding:64px 48px; background:linear-gradient(135deg, #2D2D6B 0%, #5A3F85 50%, #7B4F9E 100%); position:relative; overflow:hidden; text-align:center;">
+  <div style="position:absolute; top:-60px; right:-60px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,0.04);"></div>
+  <div style="position:absolute; bottom:-80px; left:-40px; width:250px; height:250px; border-radius:50%; background:rgba(255,255,255,0.04);"></div>
+  <div style="position:relative; z-index:1;">
+    <div style="font-size:11px; font-weight:700; letter-spacing:3px; color:rgba(255,255,255,0.6); margin-bottom:16px;">OUR MISSION</div>
+    <div style="font-size:clamp(22px,3.5vw,40px); font-weight:900; color:#ffffff; line-height:1.5; margin-bottom:24px;">人の違いが、活躍の機会を<br>奪われてしまうことをなくす。</div>
+    <div style="font-size:15px; color:rgba(255,255,255,0.7); line-height:1.9; max-width:560px; margin:0 auto;">HP・Crocs・Walmart・Uber Eatsでの25年の経験と、<br>気候変動ESG活動から生まれた、人的資本経営への挑戦。</div>
   </div>
 </div>
 
