@@ -1182,5 +1182,76 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
   observer.observe(el);
 });
 </script>
+
+<!-- EMAIL POPUP -->
+<div id="emailPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:2000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px);">
+  <div style="background:#fff;border-radius:20px;padding:40px 32px 32px;max-width:420px;width:100%;position:relative;text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.22);animation:popIn 0.35s cubic-bezier(0.34,1.56,0.64,1);">
+    <style>@keyframes popIn{from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}}</style>
+    <button onclick="closeEmailPopup()" style="position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;cursor:pointer;color:#bbb;line-height:1;" aria-label="閉じる">✕</button>
+    <div style="width:52px;height:52px;background:linear-gradient(135deg,#2D2D6B,#3d3d8a);border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;">
+      <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    </div>
+    <p style="font-size:11px;font-weight:700;letter-spacing:2px;color:#2D2D6B;margin-bottom:6px;">FREE MEMBERSHIP</p>
+    <h3 style="font-size:22px;font-weight:900;color:#1a1a45;margin-bottom:10px;line-height:1.4;">メンバー登録<span style="font-size:14px;font-weight:500;color:#888;margin-left:6px;">無料</span></h3>
+    <p style="font-size:14px;color:#666;line-height:1.8;margin-bottom:24px;">
+      HR・人事向け最新情報や<br>リミーのお役立ちコンテンツをお届けします。
+    </p>
+    <form id="subscribeForm" onsubmit="submitEmailPopup(event)">
+      <input type="email" id="popupEmailInput" placeholder="メールアドレスを入力" required
+        style="width:100%;padding:13px 16px;border:2px solid #e8e8e8;border-radius:8px;font-size:15px;box-sizing:border-box;margin-bottom:10px;outline:none;transition:border-color 0.2s;"
+        onfocus="this.style.borderColor='#2D2D6B'" onblur="this.style.borderColor='#e8e8e8'">
+      <button type="submit" id="popupSubmitBtn"
+        style="width:100%;padding:14px;background:#2D2D6B;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:background 0.2s;"
+        onmouseover="this.style.background='#3d3d8a'" onmouseout="this.style.background='#2D2D6B'">
+        無料で登録する →
+      </button>
+    </form>
+    <div id="popupSuccessMsg" style="display:none;padding:16px;background:#f0f7ff;border-radius:8px;color:#2D2D6B;font-weight:700;font-size:15px;">
+      ✅ 登録しました！<br><span style="font-size:13px;font-weight:400;">お役立ち情報をお楽しみに。</span>
+    </div>
+    <p style="font-size:11px;color:#bbb;margin-top:14px;">いつでも配信解除できます</p>
+  </div>
+</div>
+<script>
+(function(){
+  if (localStorage.getItem('limee_popup_done')) return;
+  setTimeout(function(){
+    var el = document.getElementById('emailPopup');
+    if (el) el.style.display = 'flex';
+  }, 3000);
+})();
+
+function closeEmailPopup() {
+  var el = document.getElementById('emailPopup');
+  if (el) { el.style.opacity='0'; el.style.transition='opacity 0.2s'; setTimeout(function(){ el.style.display='none'; }, 200); }
+  localStorage.setItem('limee_popup_done', '1');
+}
+
+document.getElementById('emailPopup').addEventListener('click', function(e){ if(e.target===this) closeEmailPopup(); });
+
+function submitEmailPopup(e) {
+  e.preventDefault();
+  var email = document.getElementById('popupEmailInput').value;
+  var btn = document.getElementById('popupSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  fetch('https://script.google.com/macros/s/AKfycbyGceshWFX-_kepVh5KHTvNwsrNAh7hW22U48KSp4DVvohXurOsAa6BDW7MFrsbKJ0n/exec', {
+    method: 'POST',
+    body: JSON.stringify({ action: 'subscribe_email', email: email, source: 'remenow.tokyo' })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(){
+    document.getElementById('subscribeForm').style.display = 'none';
+    document.getElementById('popupSuccessMsg').style.display = 'block';
+    localStorage.setItem('limee_popup_done', '1');
+    setTimeout(closeEmailPopup, 3000);
+  })
+  .catch(function(){
+    btn.disabled = false;
+    btn.textContent = '無料で登録する →';
+    alert('エラーが発生しました。しばらくしてお試しください。');
+  });
+}
+</script>
 </body>
 </html>
