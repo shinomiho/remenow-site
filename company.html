@@ -88,6 +88,28 @@
 
   .nav-cta:hover { background: var(--navy-light) !important; opacity: 1 !important; }
 
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: transform 0.25s, opacity 0.25s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   .page-hero {
     padding: 120px 48px 64px;
     background: linear-gradient(135deg, #f0e8f8 0%, #e8e4f5 50%, #f5f0fc 100%);
@@ -223,7 +245,26 @@
 
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
-    nav ul { display: none; }
+        .nav-hamburger { display: flex; }
+    nav ul {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0; right: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(8px);
+      flex-direction: column;
+      gap: 0;
+      padding: 8px 0 16px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      z-index: 99;
+    }
+    nav ul.open { display: flex; }
+    nav ul li { width: 100%; }
+    nav ul a { display: block; padding: 14px 24px; font-size: 16px; opacity: 0.85; }
+    nav ul a:hover { opacity: 1; background: rgba(45,45,107,0.05); }
+    .nav-cta { margin: 8px 24px; padding: 12px 20px; text-align: center; border-radius: 6px; }
     .page-hero { padding: 100px 24px 48px; }
     .section { padding: 56px 24px; }
     footer { padding: 32px 24px; }
@@ -278,14 +319,15 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="limee_logo_nav.png" alt="リミー" style="height:40px; width:auto; display:block;"></a>
-  <ul>
-    <li><a href="index.html">ホーム</a></li>
-    <li><a href="service.html">サービス内容</a></li>
-    <li><a href="faq.html">よくある質問</a></li>
-    <li><a href="representative.html">代表あいさつ</a></li>
-    <li><a href="company.html" style="opacity:1; font-weight:700;">会社概要</a></li>
-    <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+  <a href="index.html" class="nav-logo" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')"><img src="limee_logo_nav.png" alt="リミー" style="height:40px; width:auto; display:block;"></a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="メニューを開く" onclick="(function(){var btn=document.getElementById('navHamburger');var ul=document.getElementById('navMenu');btn.classList.toggle('open');ul.classList.toggle('open');})()"><span></span><span></span><span></span></button>
+  <ul id="navMenu">
+    <li><a href="index.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">ホーム</a></li>
+    <li><a href="service.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">サービス内容</a></li>
+    <li><a href="faq.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">よくある質問</a></li>
+    <li><a href="representative.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">代表あいさつ</a></li>
+    <li><a href="company.html" style="opacity:1; font-weight:700;" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">お問い合わせ</a></li>
   </ul>
 </nav>
 
@@ -324,7 +366,7 @@
       </tr>
       <tr>
         <th>連絡先</th>
-        <td><a href="contact.html">お問い合わせフォームよりご連絡ください</a></td>
+        <td><a href="contact.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">お問い合わせフォームよりご連絡ください</a></td>
       </tr>
       <tr>
         <th>開始年月</th>
@@ -341,9 +383,9 @@
 
 <footer>
   <div class="footer-links">
-    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="privacy.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">プライバシーポリシー</a>
     <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
-    <a href="tokushoho.html">特商法</a>
+    <a href="tokushoho.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">特商法</a>
   </div>
   <p>リミーは入社後90日に特化した採用後支援HRテックです</p>
   <p style="margin-top:8px">© 2026 リミー All rights reserved.</p>
