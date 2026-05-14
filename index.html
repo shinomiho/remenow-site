@@ -1235,11 +1235,9 @@ function submitEmailPopup(e) {
   var btn = document.getElementById('popupSubmitBtn');
   btn.disabled = true;
   btn.textContent = '送信中...';
-  fetch('https://script.google.com/macros/s/AKfycbx8mMDTyAvhC9tdE1t7XYA2kWTvCYQTcqU02bLOnfwutg0OXOdgye4S6OlyI_smRg1q/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    body: JSON.stringify({ email: email, source: 'remenow.tokyo' })
-  })
+  var url = 'https://script.google.com/macros/s/AKfycbx8mMDTyAvhC9tdE1t7XYA2kWTvCYQTcqU02bLOnfwutg0OXOdgye4S6OlyI_smRg1q/exec'
+    + '?email=' + encodeURIComponent(email) + '&source=remenow.tokyo';
+  fetch(url, { mode: 'no-cors' })
   .then(function(){
     document.getElementById('subscribeForm').style.display = 'none';
     document.getElementById('popupSuccessMsg').style.display = 'block';
