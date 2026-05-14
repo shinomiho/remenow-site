@@ -1096,5 +1096,65 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
   observer.observe(el);
 });
 </script>
+
+<!-- EMAIL POPUP -->
+<div id="popup-overlay" style="display:none; position:fixed; inset:0; background:rgba(45,45,107,0.75); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+  <div style="background:white; border-radius:16px; padding:40px 36px; max-width:460px; width:100%; position:relative; box-shadow:0 20px 60px rgba(45,45,107,0.3); text-align:center;">
+    <button onclick="closePopup()" style="position:absolute; top:14px; right:18px; background:none; border:none; font-size:28px; cursor:pointer; color:#9999aa; line-height:1;">×</button>
+    <img src="limee_logo_nav.png" alt="リミー" style="height:36px; margin-bottom:20px;">
+    <h2 style="font-size:19px; font-weight:900; color:#2D2D6B; margin-bottom:10px; line-height:1.5; font-family:'Noto Sans JP',sans-serif;">人的資本経営のノウハウを<br>メールでお届けします</h2>
+    <p style="font-size:13px; color:#6b6b8a; margin-bottom:24px; line-height:1.8; font-family:'Noto Sans JP',sans-serif;">ESG経営・有報開示・オンボーディングに関する最新情報を定期配信。</p>
+    <form id="popup-form" onsubmit="submitPopupEmail(event)">
+      <input type="email" id="popup-email" placeholder="メールアドレスを入力" required
+        style="width:100%; padding:13px 16px; border:2px solid #e0ddf0; border-radius:8px; font-size:14px; margin-bottom:10px; box-sizing:border-box; font-family:'Noto Sans JP',sans-serif; outline:none;">
+      <button type="submit"
+        style="width:100%; padding:14px; background:#2D2D6B; color:white; border:none; border-radius:8px; font-size:15px; font-weight:700; cursor:pointer; font-family:'Noto Sans JP',sans-serif; transition:background 0.2s;">
+        登録する →
+      </button>
+    </form>
+    <p id="popup-success" style="display:none; color:#7B4F9E; font-weight:700; margin-top:16px; font-family:'Noto Sans JP',sans-serif;">ご登録ありがとうございます！</p>
+    <p style="font-size:11px; color:#9999aa; margin-top:16px; font-family:'Noto Sans JP',sans-serif;">
+      いつでも配信停止できます。<a href="privacy.html" style="color:#7B4F9E;">プライバシーポリシー</a>
+    </p>
+  </div>
+</div>
+<script>
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbx8mMDTyAvhC9tdE1t7XYA2kWTvCYQTcqU02bLOnfwutg0OXOdgye4S6OlyI_smRg1q/exec';
+  const POPUP_KEY = 'limee_popup_v1';
+  const POPUP_INTERVAL = 14 * 24 * 60 * 60 * 1000;
+
+  function showPopup() {
+    const last = localStorage.getItem(POPUP_KEY);
+    if (last && Date.now() - parseInt(last) < POPUP_INTERVAL) return;
+    const overlay = document.getElementById('popup-overlay');
+    overlay.style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('popup-overlay').style.display = 'none';
+    localStorage.setItem(POPUP_KEY, Date.now().toString());
+  }
+
+  async function submitPopupEmail(e) {
+    e.preventDefault();
+    const email = document.getElementById('popup-email').value;
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify({ email: email }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+    document.getElementById('popup-form').style.display = 'none';
+    document.getElementById('popup-success').style.display = 'block';
+    localStorage.setItem(POPUP_KEY, Date.now().toString());
+    setTimeout(closePopup, 2500);
+  }
+
+  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+
+  setTimeout(showPopup, 5000);
+</script>
 </body>
 </html>
