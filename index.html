@@ -1277,7 +1277,12 @@ function submitEmailPopup(e) {
     <div style="font-size:12px;letter-spacing:.12em;opacity:.6;margin-bottom:10px;">FREE DIAGNOSIS</div>
     <h3>御社の離職リスク、<br>3分で無料診断できます</h3>
     <p>AIが即座にリスクスコアを算出。<br>診断結果をもとにリミーが改善策をご提案します。</p>
-    <a href="https://shinomiho.github.io/-reme-risk-diagnosis/" target="_blank" class="popup-cta">無料で診断する →</a>
+    <form id="diag-popup-form" onsubmit="submitDiagPopup(event)" style="margin-bottom:0;">
+      <input type="email" id="diag-popup-email" placeholder="メールアドレスを入力（任意）"
+        style="width:100%;padding:12px 14px;border:none;border-radius:6px;font-size:14px;box-sizing:border-box;margin-bottom:10px;outline:none;color:#1a1a45;">
+      <button type="submit" id="diag-popup-btn" class="popup-cta" style="width:100%;border:none;cursor:pointer;font-size:15px;">無料で診断する →</button>
+    </form>
+    <div id="diag-popup-success" style="display:none;font-size:14px;opacity:.9;margin-top:8px;">&#x2705; 登録しました！診断ページを開きます…</div>
   </div>
 </div>
 <script>
@@ -1300,6 +1305,26 @@ function submitEmailPopup(e) {
     if(e.target === this) this.classList.remove('show');
   });
 })();
+
+function submitDiagPopup(e) {
+  e.preventDefault();
+  var email = document.getElementById('diag-popup-email').value;
+  var btn = document.getElementById('diag-popup-btn');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  var diagUrl = 'https://shinomiho.github.io/-reme-risk-diagnosis/';
+  if(email) {
+    var gasUrl = 'https://script.google.com/macros/s/AKfycbx8mMDTyAvhC9tdE1t7XYA2kWTvCYQTcqU02bLOnfwutg0OXOdgye4S6OlyI_smRg1q/exec'
+      + '?email=' + encodeURIComponent(email) + '&source=remenow.tokyo_diagpopup';
+    fetch(gasUrl, { mode: 'no-cors' }).catch(function(){});
+    document.getElementById('diag-popup-form').style.display = 'none';
+    document.getElementById('diag-popup-success').style.display = 'block';
+    setTimeout(function(){ window.open(diagUrl, '_blank'); }, 1200);
+  } else {
+    window.open(diagUrl, '_blank');
+    document.getElementById('diag-popup').classList.remove('show');
+  }
+}
 </script>
 </body>
 </html>
