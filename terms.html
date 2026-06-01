@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQ9HFMXHJV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EQ9HFMXHJV');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利用規約 | リミー</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --navy: #2D2D6B;
+    --navy-dark: #1a1a45;
+    --navy-light: #3d3d8a;
+    --purple: #7B4F9E;
+    --purple-light: #9B6FBE;
+    --purple-pale: #f0e8f8;
+    --white: #ffffff;
+    --off-white: #f8f7fc;
+    --text-muted: #6b6b8a;
+    --border: #e0ddf0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 64px;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .nav-logo-mark { width: 32px; height: 32px; }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { text-decoration: none; font-size: 14px; color: var(--navy); font-weight: 500; opacity: 0.7; transition: opacity 0.2s; }
+  nav ul a:hover { opacity: 1; }
+  .nav-cta { background: var(--navy); color: var(--white) !important; opacity: 1 !important; padding: 8px 20px; border-radius: 4px; font-size: 13px !important; font-weight: 700 !important; }
+  .nav-cta:hover { background: var(--navy-light) !important; }
+
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 2px; background: var(--navy);
+    border-radius: 2px; transition: transform 0.25s, opacity 0.25s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .page-hero { padding: 120px 48px 64px; background: linear-gradient(135deg, #f0e8f8 0%, #e8e4f5 50%, #f5f0fc 100%); text-align: center; }
+  .page-hero-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--purple); text-transform: uppercase; margin-bottom: 16px; }
+  .page-hero h1 { font-size: clamp(24px, 3.5vw, 40px); font-weight: 900; color: var(--navy); line-height: 1.3; }
+  .section { padding: 80px 48px; }
+  .section-inner { max-width: 800px; margin: 0 auto; }
+  footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 40px 48px; text-align: center; font-size: 13px; line-height: 1.8; }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 12px; }
+  footer a:hover { color: var(--white); }
+  .footer-links { margin-bottom: 12px; }
+  .legal-body { line-height: 2; color: var(--text-muted); font-size: 15px; }
+  .legal-body h2 { font-size: 18px; font-weight: 700; color: var(--navy); margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .legal-body h2:first-child { margin-top: 0; }
+  .legal-body h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 24px 0 12px; }
+  .legal-body p { margin-bottom: 16px; }
+  .legal-body ul { padding-left: 24px; margin-bottom: 16px; }
+  .legal-body ul li { margin-bottom: 8px; }
+  .legal-body .updated { font-size: 13px; color: var(--text-muted); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .legal-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 16px; }
+  .legal-table th, .legal-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; line-height: 1.8; }
+  .legal-table th { width: 180px; font-weight: 700; color: var(--navy); background: var(--off-white); white-space: nowrap; }
+  .legal-table td { color: var(--text-muted); }
+  .toc { background: var(--off-white); border-left: 4px solid var(--purple); padding: 20px 24px; margin-bottom: 48px; border-radius: 4px; }
+  .toc-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 12px; letter-spacing: 0.5px; }
+  .toc ol { padding-left: 24px; font-size: 14px; line-height: 1.9; }
+  .toc ol li a { color: var(--text-muted); text-decoration: none; }
+  .toc ol li a:hover { color: var(--purple); text-decoration: underline; }
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-hamburger { display: flex; }
+    nav ul {
+      display: none;
+      position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    nav ul.open { display: flex; }
+    nav ul li { width: 100%; }
+    nav ul a { display: block; padding: 14px 24px; opacity: 0.85; }
+    .nav-cta { margin: 8px 24px; padding: 12px 20px; text-align: center; border-radius: 6px; }
+    .page-hero { padding: 100px 24px 48px; }
+    .section { padding: 56px 24px; }
+    footer { padding: 32px 24px; }
+  }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')"><img src="limee_logo_nav.png" alt="リミー" style="height:40px; width:auto; display:block;"></a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="メニューを開く" onclick="(function(){var btn=document.getElementById('navHamburger');var ul=document.getElementById('navMenu');btn.classList.toggle('open');ul.classList.toggle('open');})()"><span></span><span></span><span></span></button>
+  <ul id="navMenu">
+    <li><a href="index.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">ホーム</a></li>
+    <li><a href="service.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">サービス内容</a></li>
+    <li><a href="faq.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">よくある質問</a></li>
+    <li><a href="representative.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">代表あいさつ</a></li>
+    <li><a href="company.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">会社概要</a></li>
+    <li><a href="contact.html" class="nav-cta" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-tag">TERMS OF SERVICE</div>
+  <h1>利用規約</h1>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="legal-body">
+
+      <p class="updated">制定日：2026年6月1日　最終更新日：2026年6月1日</p>
+
+      <div class="toc">
+        <div class="toc-title">目次</div>
+        <ol>
+          <li><a href="#article1">第1条（適用範囲）</a></li>
+          <li><a href="#article2">第2条（定義）</a></li>
+          <li><a href="#article3">第3条（サービス内容）</a></li>
+          <li><a href="#article4">第4条（利用契約の成立）</a></li>
+          <li><a href="#article5">第5条（料金・支払い）</a></li>
+          <li><a href="#article6">第6条（解約・返金）</a></li>
+          <li><a href="#article7">第7条（ユーザーの責務）</a></li>
+          <li><a href="#article8">第8条（禁止事項）</a></li>
+          <li><a href="#article9">第9条（知的財産権）</a></li>
+          <li><a href="#article10">第10条（個人情報の取扱い）</a></li>
+          <li><a href="#article11">第11条（免責事項）</a></li>
+          <li><a href="#article12">第12条（サービスの変更・終了）</a></li>
+          <li><a href="#article13">第13条（規約の変更）</a></li>
+          <li><a href="#article14">第14条（合意管轄）</a></li>
+        </ol>
+      </div>
+
+      <h2 id="article1">第1条（適用範囲）</h2>
+      <p>本規約は、リミー（代表：四戸美穂、以下「当方」）が提供する以下のすべてのサービス（以下「本サービス」と総称）のご利用条件を定めるものです。本サービスをご利用いただくすべてのお客様（以下「ユーザー」）に適用されます。</p>
+      <ul>
+        <li>リミーAI診断（入社後90日 オンボーディング診断）</li>
+        <li>リミーPost（SNS自動投稿ツール）</li>
+        <li>コンサルティング・人的資本KPI設計・ESG経営支援</li>
+        <li>その他、当方が提供する関連サービス</li>
+      </ul>
+      <p>各サービス固有の条件がある場合は、本規約に加えて個別利用規約・契約書を別途定め、それらは本規約に優先します。</p>
+
+      <h2 id="article2">第2条（定義）</h2>
+      <ul>
+        <li><strong>「ユーザー」</strong>：本サービスを利用する個人または法人。</li>
+        <li><strong>「アカウント」</strong>：ユーザー識別のために発行される会社コード・ライセンスキー等。</li>
+        <li><strong>「利用契約」</strong>：本規約および個別契約書（業務委託契約書・サービス利用契約書等）の総称。</li>
+      </ul>
+
+      <h2 id="article3">第3条（サービス内容）</h2>
+      <p>本サービスの具体的な内容・機能・提供範囲は、当方が公開するサービスページ・契約書・申込書等に記載のとおりとします。当方は、サービス改善のため事前告知のうえ機能を追加・変更・削除することがあります。</p>
+
+      <h2 id="article4">第4条（利用契約の成立）</h2>
+      <p>利用契約は、以下のいずれかの方法でユーザーが本規約に同意した時点で成立します。</p>
+      <ul>
+        <li>申込フォームでの同意ボタンの押下</li>
+        <li>Stripe等の決済プラットフォームでの決済完了</li>
+        <li>個別契約書（業務委託契約書等）への署名・記名押印</li>
+        <li>当方が指定する方法による申込み</li>
+      </ul>
+
+      <h2 id="article5">第5条（料金・支払い）</h2>
+      <h3>5-1 料金</h3>
+      <p>各サービスの料金は、サービスページ・申込書・契約書に記載の金額とします。表示価格は特段の記載がない限り税抜とします。</p>
+      <h3>5-2 支払期日</h3>
+      <p>原則として、月額課金サービスは毎月末日締め翌月末日払い、単発サービスは請求書発行日の属する月の末日払いとします。</p>
+      <h3>5-3 支払方法</h3>
+      <p>銀行振込、クレジットカード（Stripe）、その他当方が指定する方法による。振込手数料はユーザーの負担とします。</p>
+      <h3>5-4 遅延損害金</h3>
+      <p>支払いが遅延した場合、年14.6％の遅延損害金を請求することがあります。</p>
+
+      <h2 id="article6">第6条（解約・返金）</h2>
+      <h3>6-1 ユーザーからの解約</h3>
+      <p>ユーザーは原則として、解約希望日の30日前までに書面（メール含む）にて当方へ通知することにより、利用契約を解約できます。</p>
+      <h3>6-2 最低契約期間</h3>
+      <p>サービスにより最低契約期間を定める場合があります（例：月額サービスは3ヶ月）。詳細は各サービスの個別契約に従います。</p>
+      <h3>6-3 返金</h3>
+      <p>原則として、すでに支払い済みの料金の日割返金は行いません。当方の重大な過失による解約の場合はこの限りではありません。</p>
+
+      <h2 id="article7">第7条（ユーザーの責務）</h2>
+      <ul>
+        <li>提供された資料・ツール・アカウント情報を、契約の目的の範囲内でのみ使用すること</li>
+        <li>第三者にアカウント情報を共有・転売しないこと</li>
+        <li>本サービスの利用にあたって関連法令を遵守すること</li>
+        <li>当方からの連絡（料金請求・重要なお知らせ等）に適切に対応すること</li>
+      </ul>
+
+      <h2 id="article8">第8条（禁止事項）</h2>
+      <p>ユーザーは以下の行為を行ってはなりません。</p>
+      <ul>
+        <li>本サービスを違法・公序良俗に反する目的で使用すること</li>
+        <li>当方または第三者の知的財産権・プライバシー権・名誉権を侵害すること</li>
+        <li>本サービスのリバースエンジニアリング・複製・改変・二次配布</li>
+        <li>当方の事前承諾なく本サービスを転売・再提供すること</li>
+        <li>当方のシステムに過剰な負荷をかける行為、不正アクセス</li>
+        <li>虚偽の情報を登録すること、なりすまし行為</li>
+        <li>その他、当方が不適切と判断する行為</li>
+      </ul>
+      <p>上記違反があった場合、当方は事前通告なく利用停止・契約解除を行うことができます。</p>
+
+      <h2 id="article9">第9条（知的財産権）</h2>
+      <p>本サービスを構成するソフトウェア・テンプレート・コンテンツ・ロゴ等の著作権・商標権その他一切の知的財産権は、当方または正当な権利者に帰属します。ユーザーは、本サービスの利用に必要な範囲で、これらを使用する非独占的・譲渡不可のライセンスを得るものとします。</p>
+      <p>ユーザーが本サービスを利用して作成したアウトプット（投稿文・診断結果等）の著作権はユーザーに帰属します。ただし、当方はサービス改善・統計分析の目的で、個人が特定されない形でこれらを利用する権利を留保します。</p>
+
+      <h2 id="article10">第10条（個人情報の取扱い）</h2>
+      <p>当方は、ユーザーおよびその関係者の個人情報を別途定める <a href="privacy.html" style="color:var(--purple);">プライバシーポリシー</a> に従って適切に取り扱います。診断サービスにおいては、従業員個人の回答内容をそのまま企業担当者に開示することはなく、5軸スコア等の集約データのみを共有します。</p>
+
+      <h2 id="article11">第11条（免責事項）</h2>
+      <ul>
+        <li>当方は、本サービスの提供にあたり可能な限りの注意を払いますが、サービスの中断・データ消失・技術的不具合等が一切発生しないことを保証するものではありません。</li>
+        <li>当方は、本サービスから得られた結果（診断レポート・KPI数値・コンサルティング提案等）の活用によって生じる経営判断・業績結果について、一切の保証を行いません。</li>
+        <li>当方が責任を負う場合の損害賠償額の上限は、損害発生月の月額料金相当額（単発サービスの場合は支払総額）を上限とします。</li>
+        <li>当方の故意または重過失による損害については、この限りではありません。</li>
+      </ul>
+
+      <h2 id="article12">第12条（サービスの変更・終了）</h2>
+      <p>当方は、事業上の理由により本サービスの内容を変更・終了することがあります。サービス終了の場合は、原則として60日前までにユーザーへ通知します。</p>
+
+      <h2 id="article13">第13条（規約の変更）</h2>
+      <p>当方は、本規約を必要に応じて変更することがあります。重要な変更は本サイト上または登録メールアドレスへの通知により告知します。変更後の規約は、告知に定める効力発生日から適用されます。</p>
+
+      <h2 id="article14">第14条（合意管轄）</h2>
+      <p>本規約および本サービスに関して生じた紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+      <h2>事業者情報</h2>
+      <table class="legal-table">
+        <tr><th>屋号</th><td>リミー</td></tr>
+        <tr><th>代表者</th><td>四戸 美穂</td></tr>
+        <tr><th>所在地</th><td>お問い合わせフォームよりお尋ねください</td></tr>
+        <tr><th>連絡先</th><td>miho.shinohe@remenow.com</td></tr>
+        <tr><th>適格請求書発行事業者登録番号</th><td>T5810769837394</td></tr>
+        <tr><th>お問い合わせ</th><td><a href="contact.html" style="color:var(--purple);">お問い合わせフォーム</a></td></tr>
+      </table>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">プライバシーポリシー</a>
+    <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
+    <a href="terms.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">利用規約</a>
+    <span style="color:rgba(255,255,255,0.3); margin:0 4px">｜</span>
+    <a href="tokushoho.html" onclick="document.getElementById('navMenu').classList.remove('open');document.getElementById('navHamburger').classList.remove('open')">特商法</a>
+  </div>
+  <p>リミーは入社後90日に特化した採用後支援HRテックです</p>
+  <p style="margin-top:8px">© 2026 リミー All rights reserved.</p>
+</footer>
+</body>
+</html>
